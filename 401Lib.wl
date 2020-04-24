@@ -19,11 +19,11 @@
 Symbolize[ParsedBoxWrapper[SubscriptBox["_","_"]]]
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Assumptions*)
 
 
-$Assumptions={{\[Gamma],\[Beta],r,\[Theta],\[Phi],t,\[Tau],R,\[Omega],k}\[Element]PositiveReals,{x,y,z,Subscript[E, 0],Subscript[B, 0]}\[Element]Reals,{m,n,k}\[Element]NonNegativeIntegers};
+$Assumptions={{\[Gamma],\[Beta],r,\[Theta],\[Phi],t,\[Tau],R,\[Omega],k,\[Epsilon],\[Mu],\[Sigma],Subscript[\[Mu], 0],Subscript[\[Epsilon], 0],c}\[Element]PositiveReals,{x,y,z,Subscript[E, 0],Subscript[B, 0]}\[Element]Reals,{m,n,k}\[Element]NonNegativeIntegers};
 
 
 (* ::Section::Closed:: *)
@@ -75,6 +75,15 @@ PoyntingVector[ef_,bf_]:=FullSimplify[Re[ComplexExpand[ef]]]\[Cross]FullSimplify
 
 (* ::Section:: *)
 (*Conductors*)
+
+
+KCond=Sqrt[Subscript[\[Mu], 0] \[Epsilon] \[Omega]^2+I Subscript[\[Mu], 0] \[Sigma] \[Omega]];
+kCond=\[Omega] Sqrt[(Subscript[\[Mu], 0] \[Epsilon])/2] Sqrt[Sqrt[1+(\[Sigma]/(\[Epsilon] \[Omega]))^2]+1];
+dCondInv=\[Omega] Sqrt[(Subscript[\[Mu], 0] \[Epsilon])/2] Sqrt[Sqrt[1+(\[Sigma]/(\[Epsilon] \[Omega]))^2]-1];
+bCond=(c Sqrt[\[Epsilon] Subscript[\[Mu], 0]] (I Sqrt[-1+Sqrt[1+\[Sigma]^2/(\[Epsilon]^2 \[Omega]^2)]]+Sqrt[1+Sqrt[1+\[Sigma]^2/(\[Epsilon]^2 \[Omega]^2)]]))/(Sqrt[2] n);
+RFCond=(n^2 \[Omega]-c^2 Subscript[\[Mu], 0] Sqrt[\[Sigma]^2+\[Epsilon]^2 \[Omega]^2]-I Sqrt[2] c n Sqrt[Subscript[\[Mu], 0] \[Omega] (-\[Epsilon] \[Omega]+Sqrt[\[Sigma]^2+\[Epsilon]^2 \[Omega]^2])])/(n^2 \[Omega]+c^2 Subscript[\[Mu], 0] Sqrt[\[Sigma]^2+\[Epsilon]^2 \[Omega]^2]+Sqrt[2] c n Sqrt[Subscript[\[Mu], 0] \[Omega] (\[Epsilon] \[Omega]+Sqrt[\[Sigma]^2+\[Epsilon]^2 \[Omega]^2])]);
+TFCond=(4 n)/(2 n+Sqrt[2] c (I Sqrt[\[Epsilon] Subscript[\[Mu], 0] (-1+Sqrt[1+\[Sigma]^2/(\[Epsilon]^2 \[Omega]^2)])]+Sqrt[\[Epsilon] Subscript[\[Mu], 0] (1+Sqrt[1+\[Sigma]^2/(\[Epsilon]^2 \[Omega]^2)])]));
+RCfCond=(n^4 \[Omega]^2-2 c^2 n^2 \[Epsilon] Subscript[\[Mu], 0] \[Omega]^2+c^4 \!\(\*SubsuperscriptBox[\(\[Mu]\), \(0\), \(2\)]\) (\[Sigma]^2+\[Epsilon]^2 \[Omega]^2))/(n^2 \[Omega]+c^2 Subscript[\[Mu], 0] Sqrt[\[Sigma]^2+\[Epsilon]^2 \[Omega]^2]+Sqrt[2] c n Sqrt[Subscript[\[Mu], 0] \[Omega] (\[Epsilon] \[Omega]+Sqrt[\[Sigma]^2+\[Epsilon]^2 \[Omega]^2])])^2;
 
 
 (* ::Section:: *)
