@@ -13,7 +13,7 @@ Compute a time averge Poynting vector of an electromagnetic wave
 PoyntingVector[E0 {1, 0, 0} E^(I (k - o t)),B0 {0, 1, 0} E^(I (k - o t))]
 {0, 0,(B0 E0 Cos[k - t o]^2)/mu0}
 TimeAverage[%]//Last
-(B0 E0)/(2 \mu0)
+(B0 E0)/(2 mu0)
 ```
 
 
