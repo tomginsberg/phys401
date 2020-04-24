@@ -7,7 +7,7 @@ Wolfram language package for the physics 401 final exam
 
 ## Examples 
 
-Compute a time averge Poynting vector of an electromagnetic wave
+Compute a time average Poynting vector of an electromagnetic wave
 
 ```Mathematica
 PoyntingVector[E0 {1, 0, 0} E^(I (k - o t)),B0 {0, 1, 0} E^(I (k - o t))]
