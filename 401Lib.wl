@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Package Imports*)
 
 
@@ -8,7 +8,7 @@
 <<Notation`;
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Notation*)
 
 
@@ -19,14 +19,14 @@
 Symbolize[ParsedBoxWrapper[SubscriptBox["_","_"]]]
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Assumptions*)
 
 
-$Assumptions={{\[Gamma],\[Beta],r,\[Theta],\[Phi],t,\[Tau],R,\[Omega]}\[Element]PositiveReals,{x,y,z}\[Element]Reals};
+$Assumptions={{\[Gamma],\[Beta],r,\[Theta],\[Phi],t,\[Tau],R,\[Omega],k}\[Element]PositiveReals,{x,y,z,Subscript[E, 0],Subscript[B, 0]}\[Element]Reals,{m,n,k}\[Element]NonNegativeIntegers};
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Constants*)
 
 
@@ -44,7 +44,7 @@ CartesianBasis=OverHat/@{x,y,z};
 SphericalBasis=OverHat/@{r,\[Theta],\[Phi]};
 CartesianToSphericalField[field_]:=TransformedField["Cartesian"->"Spherical",field,{x,y,z}->{r,\[Theta],\[Phi]}]
 SphericalToCartesianField[field_]:=TransformedField["Spherical"->"Cartesian",field,{r,\[Theta],\[Phi]}->{x,y,z}]
-(* Do not chnage the form of this or for some reason this won't compile *)
+(* Do not change the form of this or for some reason this won't compile *)
 SphericalIntegral[expr_]:=\!\(\*
 TagBox[
 StyleBox[
@@ -66,10 +66,19 @@ ShowStringCharacters->True,
 NumberMarks->True],
 FullForm]\)
 QuantityReplace[quants_,OptionsPattern[{Fun->True}]][expr_]:=expr/. Table[If[QuantityQ[q[[2]]],q[[1]]->q[[2]],q[[1]]->Quantity[q[[2]]]],{q,quants}]/. If[OptionValue[Fun],fundamentalConstants,{}]
+PoyntingVector[ef_,bf_]:=FullSimplify[Re[ComplexExpand[ef]]]\[Cross]FullSimplify[Re[ComplexExpand[bf]]]/Subscript[\[Mu], 0]
 
 
 (* ::Section:: *)
 (*Optics*)
+
+
+(* ::Section:: *)
+(*Conductors*)
+
+
+(* ::Section:: *)
+(*Plasma*)
 
 
 (* ::Section:: *)
@@ -90,7 +99,7 @@ DipolePoyntingVector[p_]:=(Subscript[\[Mu], 0] (1/(4 \[Pi] r))^2 (Total[(\!\(
 \*SubscriptBox[\(\[PartialD]\), \({t, 2}\)]p\)/r)^2) {x,y,z})/(c r)
 
 
-(* ::Section:: *)
+(* ::Section::Closed:: *)
 (*Relativity*)
 
 

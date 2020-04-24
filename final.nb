@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    102052,       1822]
-NotebookOptionsPosition[     99723,       1774]
-NotebookOutlinePosition[    100212,       1791]
-CellTagsIndexPosition[    100169,       1788]
+NotebookDataLength[     99899,       1774]
+NotebookOptionsPosition[     97886,       1731]
+NotebookOutlinePosition[     98375,       1748]
+CellTagsIndexPosition[     98332,       1745]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -32,8 +32,6 @@ Cell["2019 Final", "Chapter",
   3.7966881457744303`*^9}},ExpressionUUID->"9be34a9d-3bdc-4970-b5f5-\
 fed2609375ba"],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[{
  RowBox[{
   RowBox[{"SetDirectory", "[", 
@@ -43,47 +41,6 @@ Cell[BoxData[{
  CellChangeTimes->{{3.796688155075302*^9, 3.796688180592429*^9}, 
    3.796688292765143*^9},
  CellLabel->"In[23]:=",ExpressionUUID->"0c6c3ae5-858c-467a-b8d4-a3963fafa301"],
-
-Cell[BoxData[
- TemplateBox[{
-  "Integrate", "nodiffd", 
-   "\"\\!\\(\\*RowBox[{SubsuperscriptBox[\\\"\[Integral]\\\", \\\"0\\\", \
-RowBox[{\\\"2\\\", \\\"\[Pi]\\\"}]], RowBox[{SuperscriptBox[\\\"r\\\", \
-\\\"2\\\"], \\\"expr\\\", RowBox[{\\\"Sin\\\", \\\"[\\\", \\\"\[Theta]\\\", \
-\\\"]\\\"}]}]}]\\) cannot be interpreted. Integrals are entered in the form \
-\\!\\(\[Integral]f\[DifferentialD]x\\), \\!\\(\\*SubsuperscriptBox[\\(\
-\[Integral]\\), \\(a\\),\\(b\\)]f\[DifferentialD]x\\), or \
-\\!\\(\\*UnderscriptBox[\\(\[Integral]\\),\\(vars \[Element] region\\)]f\\), \
-where \\!\\(\[DifferentialD]\\) is entered as \[EscapeKey]dd\[EscapeKey].\"", 
-   2, 24, 4, 30543588691071051462, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{{3.796688171852407*^9, 3.7966881823976593`*^9}, 
-   3.7966882445960207`*^9, 3.796688293824318*^9, {3.796688343736569*^9, 
-   3.796688362807518*^9}},
- CellLabel->
-  "During evaluation of \
-In[23]:=",ExpressionUUID->"b31e784a-66ea-4ba1-bc9a-1099de7e8f20"],
-
-Cell["\<\
-Syntax::sntx: Invalid syntax in or before \"\\*SuperscriptBox[\\(r\\), \
-\\(2\\)]\\ expr\\ Sin[\[Theta]]\\) \[DifferentialD]\[Phi] \[DifferentialD]\
-\[Theta]\\)\\) \"
-                                                                              \
-                                                                      ^
-     (line 50 of \"401Lib.wl\").\
-\>", "Message", "MSG",
- CellChangeTimes->{{3.796688171852407*^9, 3.7966881823976593`*^9}, 
-   3.7966882445960207`*^9, 3.796688293824318*^9, {3.796688343736569*^9, 
-   3.796688362818605*^9}},
- CellLabel->
-  "During evaluation of \
-In[23]:=",ExpressionUUID->"05ebdb0d-9d62-448e-80fb-dc21c628a57a"]
-}, Open  ]],
-
-Cell[BoxData[""], "Input",
- CellChangeTimes->{
-  3.796688440411223*^9},ExpressionUUID->"4dc9c5cb-1abe-4802-8769-\
-cf7c9330f902"],
 
 Cell[CellGroupData[{
 
@@ -1794,32 +1751,27 @@ Cell[CellGroupData[{
 Cell[580, 22, 165, 3, 95, "Title",ExpressionUUID->"66fabc86-e357-41fc-9333-e64cc0b5bc28"],
 Cell[CellGroupData[{
 Cell[770, 29, 159, 3, 59, "Chapter",ExpressionUUID->"9be34a9d-3bdc-4970-b5f5-fed2609375ba"],
+Cell[932, 34, 353, 8, 52, "Input",ExpressionUUID->"0c6c3ae5-858c-467a-b8d4-a3963fafa301"],
 Cell[CellGroupData[{
-Cell[954, 36, 353, 8, 52, "Input",ExpressionUUID->"0c6c3ae5-858c-467a-b8d4-a3963fafa301"],
-Cell[1310, 46, 1008, 18, 50, "Message",ExpressionUUID->"b31e784a-66ea-4ba1-bc9a-1099de7e8f20"],
-Cell[2321, 66, 658, 13, 50, "Message",ExpressionUUID->"05ebdb0d-9d62-448e-80fb-dc21c628a57a"]
+Cell[1310, 46, 150, 3, 53, "Section",ExpressionUUID->"a0995a51-46d2-4ebc-b554-8c3323c8072c"],
+Cell[1463, 51, 70948, 1169, 295, "Input",ExpressionUUID->"0d09e844-ab81-49ca-8fac-8abaa4fff450"],
+Cell[72414, 1222, 19018, 318, 66, "Input",ExpressionUUID->"d0527c44-ad4d-4a64-b987-d12e276a149e"],
+Cell[CellGroupData[{
+Cell[91457, 1544, 522, 12, 30, "Input",ExpressionUUID->"109ce214-37fb-425c-a7fc-44fb5a08e742"],
+Cell[91982, 1558, 405, 10, 34, "Output",ExpressionUUID->"ba13ae00-0236-4115-b578-0abe058e3a95"]
 }, Open  ]],
-Cell[2994, 82, 128, 3, 30, "Input",ExpressionUUID->"4dc9c5cb-1abe-4802-8769-cf7c9330f902"],
+Cell[92402, 1571, 649, 16, 30, "Input",ExpressionUUID->"f23ce58a-e697-48d0-84b8-54027cee16f2"],
 Cell[CellGroupData[{
-Cell[3147, 89, 150, 3, 53, "Section",ExpressionUUID->"a0995a51-46d2-4ebc-b554-8c3323c8072c"],
-Cell[3300, 94, 70948, 1169, 295, "Input",ExpressionUUID->"0d09e844-ab81-49ca-8fac-8abaa4fff450"],
-Cell[74251, 1265, 19018, 318, 66, "Input",ExpressionUUID->"d0527c44-ad4d-4a64-b987-d12e276a149e"],
-Cell[CellGroupData[{
-Cell[93294, 1587, 522, 12, 30, "Input",ExpressionUUID->"109ce214-37fb-425c-a7fc-44fb5a08e742"],
-Cell[93819, 1601, 405, 10, 34, "Output",ExpressionUUID->"ba13ae00-0236-4115-b578-0abe058e3a95"]
-}, Open  ]],
-Cell[94239, 1614, 649, 16, 30, "Input",ExpressionUUID->"f23ce58a-e697-48d0-84b8-54027cee16f2"],
-Cell[CellGroupData[{
-Cell[94913, 1634, 910, 24, 53, "Input",ExpressionUUID->"3a5f345a-4cef-4c76-aad5-da3fbdc8536e"],
-Cell[95826, 1660, 740, 19, 43, "Output",ExpressionUUID->"3283a5fd-2f2b-4012-9f28-e0247914eae3"]
+Cell[93076, 1591, 910, 24, 53, "Input",ExpressionUUID->"3a5f345a-4cef-4c76-aad5-da3fbdc8536e"],
+Cell[93989, 1617, 740, 19, 43, "Output",ExpressionUUID->"3283a5fd-2f2b-4012-9f28-e0247914eae3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[96603, 1684, 750, 19, 30, "Input",ExpressionUUID->"8fd9ac81-0961-4aba-acc9-ad06be98877b"],
-Cell[97356, 1705, 789, 17, 40, "Output",ExpressionUUID->"dca09c50-de9b-4ba2-8ee5-100581147504"]
+Cell[94766, 1641, 750, 19, 30, "Input",ExpressionUUID->"8fd9ac81-0961-4aba-acc9-ad06be98877b"],
+Cell[95519, 1662, 789, 17, 40, "Output",ExpressionUUID->"dca09c50-de9b-4ba2-8ee5-100581147504"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[98182, 1727, 651, 16, 45, "Input",ExpressionUUID->"762bb5ca-38d6-4d17-9030-dc19faa09c8d"],
-Cell[98836, 1745, 835, 23, 45, "Output",ExpressionUUID->"88ef0460-dc4c-42b9-a8d2-d4f7f97adcb5"]
+Cell[96345, 1684, 651, 16, 45, "Input",ExpressionUUID->"762bb5ca-38d6-4d17-9030-dc19faa09c8d"],
+Cell[96999, 1702, 835, 23, 45, "Output",ExpressionUUID->"88ef0460-dc4c-42b9-a8d2-d4f7f97adcb5"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
