@@ -1,0 +1,376 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12545,        368]
+NotebookOptionsPosition[      9842,        314]
+NotebookOutlinePosition[     10239,        330]
+CellTagsIndexPosition[     10196,        327]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["401Lib Examples", "Title",
+ CellChangeTimes->{{3.7966931561293287`*^9, 
+  3.7966931626991663`*^9}},ExpressionUUID->"be321372-9655-49f9-a206-\
+b74e96003dfd"],
+
+Cell[CellGroupData[{
+
+Cell["Usage", "Subsection",ExpressionUUID->"ee4f9456-b091-4f4a-b6e3-f2e6a0d8b8e6"],
+
+Cell["Create a new notebook in this directory, at the top run", "Text",ExpressionUUID->"9a4e21cb-6f26-496f-8c6b-fee6ac0f4727"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ";"}], "\n", 
+ RowBox[{"<<", "401Lib.wl"}]}], "Input",
+ CellLabel->"In[31]:=",ExpressionUUID->"19caf0c2-6e67-4ce4-b701-8b005a2ca2ae"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Find the far field on the y axis for a dipole oriented on the z-axis  \
+\>", "Subsection",ExpressionUUID->"107f9239-38ba-4518-b19f-0b71493b133d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"DipoleEField", "[", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", 
+       RowBox[{
+        RowBox[{"Subscript", "[", 
+         RowBox[{"p", ",", " ", "0"}], "]"}], " ", 
+        RowBox[{"Cos", "[", 
+         RowBox[{"\[Omega]", " ", "t"}], "]"}]}]}], "}"}], "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"x", "->", "0"}], ",", 
+      RowBox[{"z", "->", "0"}], ",", 
+      RowBox[{"r", "->", "y"}]}], "}"}]}], ")"}], ".", 
+  "CartesianBasis"}]], "Input",
+ CellLabel->"In[40]:=",ExpressionUUID->"0f3be9cb-a922-4d33-9587-5c8afa49aa66"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["\[Omega]", "2"], " ", 
+   RowBox[{"Cos", "[", 
+    RowBox[{"t", " ", "\[Omega]"}], "]"}], " ", 
+   OverscriptBox["z", "^"], " ", 
+   SubscriptBox["p", "0"], " ", 
+   SubscriptBox["\[Mu]", "0"]}], 
+  RowBox[{"4", " ", "\[Pi]", " ", "y"}]]], "Output",
+ CellChangeTimes->{
+  3.796692887883862*^9, {3.7966929329888687`*^9, 3.796692961037306*^9}},
+ CellLabel->"Out[40]=",ExpressionUUID->"b6cc75a2-83b0-4d2f-a696-cccc58d75a70"]
+}, Open  ]],
+
+Cell["Evaluate it for some constants", "Text",ExpressionUUID->"8c98949e-0e22-42ce-9201-9a14ca82c95a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["\[Omega]", "2"], " ", 
+     RowBox[{"Cos", "[", 
+      RowBox[{"t", " ", "\[Omega]"}], "]"}], " ", 
+     OverscriptBox["z", "^"], " ", 
+     SubscriptBox["p", "0"], " ", 
+     SubscriptBox["\[Mu]", "0"]}], 
+    RowBox[{"4", " ", "\[Pi]", " ", "y"}]], "//", 
+   RowBox[{"QuantityReplace", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"y", "->", "\"\<1m\>\""}], ",", 
+      RowBox[{
+       SubscriptBox["p", "0"], "->", "\"\<2.5 C m\>\""}], ",", 
+      RowBox[{"\[Omega]", "->", "\"\<10 MHz\>\""}]}], "}"}], "]"}]}], "//", 
+  "UnitSimplify"}]], "Input",
+ CellChangeTimes->{
+  3.796692931632868*^9, {3.796692970592267*^9, 3.796693013684223*^9}, {
+   3.7966931023435297`*^9, 3.796693128590716*^9}},
+ CellLabel->"In[55]:=",ExpressionUUID->"b52940a1-81f4-4ad7-93e2-179fb9c946a4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Cos", "[", 
+   RowBox[{"t", " ", 
+    RowBox[{"(", 
+     TemplateBox[{"10000000", "\"Hz\"", "hertz", "\"Hertz\""},
+      "Quantity"], ")"}]}], "]"}], " ", 
+  OverscriptBox["z", "^"], " ", 
+  RowBox[{"(", 
+   TemplateBox[{"2.5000000013609394`*^7", 
+     RowBox[{
+      "\"V\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "volts per meter", 
+     FractionBox["\"Volts\"", "\"Meters\""]},
+    "Quantity"], ")"}]}]], "Output",
+ CellChangeTimes->{
+  3.796692892414554*^9, {3.796692937727181*^9, 3.796693014015486*^9}, {
+   3.796693099334234*^9, 3.7966931296242228`*^9}},
+ CellLabel->"Out[55]=",ExpressionUUID->"dd12de06-f8f3-414c-a7ca-8140244c6349"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Find the radiated power for for a dipole oriented on the z-axis \
+\>", "Subsection",ExpressionUUID->"0d8a33a9-5ce4-4c4c-a03b-76d4685936f3"],
+
+Cell[TextData[{
+ "Compute ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"S", "\[CenterDot]", 
+    OverscriptBox["r", "^"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "9917034f-49fd-4d9f-b9f3-2b4ea2f1f956"]
+}], "Text",
+ CellChangeTimes->{{3.796693185005323*^9, 
+  3.796693185387088*^9}},ExpressionUUID->"a5608600-7f44-436c-91da-\
+1b4840871de5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"CartesianToSphericalField", "[", 
+    RowBox[{"DipolePoyntingVector", "[", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", 
+       RowBox[{
+        RowBox[{"Subscript", "[", 
+         RowBox[{"p", ",", " ", "0"}], "]"}], " ", 
+        RowBox[{"Cos", "[", 
+         RowBox[{"\[Omega]", " ", "t"}], "]"}]}]}], "}"}], "]"}], "]"}], "[", 
+   
+   RowBox[{"[", "1", "]"}], "]"}], "//", "Simplify"}]], "Input",
+ CellLabel->"In[57]:=",ExpressionUUID->"5440aaed-2390-41f4-864d-198a33f60a04"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["\[Omega]", "4"], " ", 
+   SuperscriptBox[
+    RowBox[{"Cos", "[", 
+     RowBox[{"t", " ", "\[Omega]"}], "]"}], "2"], " ", 
+   SuperscriptBox[
+    RowBox[{"Sin", "[", "\[Theta]", "]"}], "2"], " ", 
+   SubsuperscriptBox["p", "0", "2"], " ", 
+   SubscriptBox["\[Mu]", "0"]}], 
+  RowBox[{"16", " ", "c", " ", 
+   SuperscriptBox["\[Pi]", "2"], " ", 
+   SuperscriptBox["r", "2"]}]]], "Output",
+ CellChangeTimes->{3.7966931895447493`*^9},
+ CellLabel->"Out[57]=",ExpressionUUID->"3f7d044e-012b-442c-b10e-222830534219"]
+}, Open  ]],
+
+Cell["Find the time averaged dissipated power", "Text",ExpressionUUID->"979b1b93-5b03-43dd-9c8e-60f47545a967"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SphericalIntegral", "[", 
+  RowBox[{"%", "//", "TimeAverage"}], "]"}]], "Input",
+ CellLabel->"In[58]:=",ExpressionUUID->"c74f1a3d-8899-4b24-b817-7e4117d0e85d"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["\[Omega]", "4"], " ", 
+   SubsuperscriptBox["p", "0", "2"], " ", 
+   SubscriptBox["\[Mu]", "0"]}], 
+  RowBox[{"12", " ", "c", " ", "\[Pi]"}]]], "Output",
+ CellChangeTimes->{3.796693191999015*^9},
+ CellLabel->"Out[58]=",ExpressionUUID->"0840fbbc-978c-42f7-b9a2-13b7390f43f1"]
+}, Open  ]],
+
+Cell["Alternatively we can use Cartesian coordinates", "Text",ExpressionUUID->"5c6fece6-3077-4a72-a97a-27b6e0af9580"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"DipolePoyntingVector", "[", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", 
+        RowBox[{
+         RowBox[{"Subscript", "[", 
+          RowBox[{"p", ",", " ", "0"}], "]"}], " ", 
+         RowBox[{"Cos", "[", 
+          RowBox[{"\[Omega]", " ", "t"}], "]"}]}]}], "}"}], "]"}], ".", 
+     RowBox[{"Normalize", "[", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y", ",", "z"}], "}"}], "]"}]}], "/.", 
+    RowBox[{"r", "->", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{
+       RowBox[{"x", "^", "2"}], "+", 
+       RowBox[{"y", "^", "2"}], "+", 
+       RowBox[{"z", "^", "2"}]}], "]"}]}]}], "//", "Simplify"}], "//", 
+  "TimeAverage"}]], "Input",
+ CellLabel->"In[59]:=",ExpressionUUID->"5ed565e1-ee76-46df-8e01-cdbf53acf350"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     SuperscriptBox["x", "2"], "+", 
+     SuperscriptBox["y", "2"]}], ")"}], " ", 
+   SuperscriptBox["\[Omega]", "4"], " ", 
+   SubsuperscriptBox["p", "0", "2"], " ", 
+   SubscriptBox["\[Mu]", "0"]}], 
+  RowBox[{"32", " ", "c", " ", 
+   SuperscriptBox["\[Pi]", "2"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox["x", "2"], "+", 
+      SuperscriptBox["y", "2"], "+", 
+      SuperscriptBox["z", "2"]}], ")"}], "2"]}]]], "Output",
+ CellChangeTimes->{3.7966931949344683`*^9},
+ CellLabel->"Out[59]=",ExpressionUUID->"6c969e6a-497d-4084-87de-ab21445c822d"]
+}, Open  ]],
+
+Cell["\<\
+Then we can define an implicit region for integration and still end up with \
+the same answer\
+\>", "Text",ExpressionUUID->"521ad142-6c43-42de-b85f-19ca93f94f25"],
+
+Cell[BoxData[
+ RowBox[{
+  UnderscriptBox["\[Integral]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y", ",", "z"}], "}"}], "\[Element]", 
+    RowBox[{"ImplicitRegion", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["x", "2"], "+", 
+        SuperscriptBox["y", "2"], "+", 
+        SuperscriptBox["z", "2"]}], "\[Equal]", 
+       SuperscriptBox["r", "2"]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]}]], 
+  FractionBox[
+   RowBox[{
+    SubsuperscriptBox["p", "0", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox["x", "2"], "+", 
+      SuperscriptBox["y", "2"]}], ")"}], " ", 
+    SuperscriptBox["\[Omega]", "4"], " ", 
+    SubscriptBox["\[Mu]", "0"]}], 
+   RowBox[{"32", " ", "c", " ", 
+    SuperscriptBox["\[Pi]", "2"], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["x", "2"], "+", 
+       SuperscriptBox["y", "2"], "+", 
+       SuperscriptBox["z", "2"]}], ")"}], "2"]}]]}]], "Input",
+ CellChangeTimes->{
+  3.796693207758559*^9},ExpressionUUID->"ece1eee1-44e9-41a5-9fc0-\
+e02099a1d15c"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["\[Omega]", "4"], " ", 
+   SubsuperscriptBox["p", "0", "2"], " ", 
+   SubscriptBox["\[Mu]", "0"]}], 
+  RowBox[{"12", " ", "c", " ", "\[Pi]"}]]], "Input",ExpressionUUID->"7f3efd86-\
+e997-454a-b15c-d11d7e6b7957"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{316, Automatic}, {Automatic, 50}},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (March 18, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"293cf450-4b0d-4bd1-a102-97e38dcdfff6"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 162, 3, 98, "Title",ExpressionUUID->"be321372-9655-49f9-a206-b74e96003dfd"],
+Cell[CellGroupData[{
+Cell[767, 29, 82, 0, 54, "Subsection",ExpressionUUID->"ee4f9456-b091-4f4a-b6e3-f2e6a0d8b8e6"],
+Cell[852, 31, 126, 0, 35, "Text",ExpressionUUID->"9a4e21cb-6f26-496f-8c6b-fee6ac0f4727"],
+Cell[981, 33, 241, 5, 52, "Input",ExpressionUUID->"19caf0c2-6e67-4ce4-b701-8b005a2ca2ae"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1259, 43, 155, 2, 54, "Subsection",ExpressionUUID->"107f9239-38ba-4518-b19f-0b71493b133d"],
+Cell[CellGroupData[{
+Cell[1439, 49, 619, 18, 30, "Input",ExpressionUUID->"0f3be9cb-a922-4d33-9587-5c8afa49aa66"],
+Cell[2061, 69, 479, 12, 56, "Output",ExpressionUUID->"b6cc75a2-83b0-4d2f-a696-cccc58d75a70"]
+}, Open  ]],
+Cell[2555, 84, 101, 0, 35, "Text",ExpressionUUID->"8c98949e-0e22-42ce-9201-9a14ca82c95a"],
+Cell[CellGroupData[{
+Cell[2681, 88, 865, 23, 53, "Input",ExpressionUUID->"b52940a1-81f4-4ad7-93e2-179fb9c946a4"],
+Cell[3549, 113, 704, 18, 43, "Output",ExpressionUUID->"dd12de06-f8f3-414c-a7ca-8140244c6349"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4302, 137, 149, 2, 54, "Subsection",ExpressionUUID->"0d8a33a9-5ce4-4c4c-a03b-76d4685936f3"],
+Cell[4454, 141, 366, 11, 35, "Text",ExpressionUUID->"a5608600-7f44-436c-91da-1b4840871de5"],
+Cell[CellGroupData[{
+Cell[4845, 156, 535, 14, 30, "Input",ExpressionUUID->"5440aaed-2390-41f4-864d-198a33f60a04"],
+Cell[5383, 172, 568, 15, 56, "Output",ExpressionUUID->"3f7d044e-012b-442c-b10e-222830534219"]
+}, Open  ]],
+Cell[5966, 190, 110, 0, 35, "Text",ExpressionUUID->"979b1b93-5b03-43dd-9c8e-60f47545a967"],
+Cell[CellGroupData[{
+Cell[6101, 194, 183, 3, 30, "Input",ExpressionUUID->"c74f1a3d-8899-4b24-b817-7e4117d0e85d"],
+Cell[6287, 199, 332, 8, 54, "Output",ExpressionUUID->"0840fbbc-978c-42f7-b9a2-13b7390f43f1"]
+}, Open  ]],
+Cell[6634, 210, 117, 0, 35, "Text",ExpressionUUID->"5c6fece6-3077-4a72-a97a-27b6e0af9580"],
+Cell[CellGroupData[{
+Cell[6776, 214, 806, 23, 30, "Input",ExpressionUUID->"5ed565e1-ee76-46df-8e01-cdbf53acf350"],
+Cell[7585, 239, 652, 19, 62, "Output",ExpressionUUID->"6c969e6a-497d-4084-87de-ab21445c822d"]
+}, Open  ]],
+Cell[8252, 261, 172, 3, 35, "Text",ExpressionUUID->"521ad142-6c43-42de-b85f-19ca93f94f25"],
+Cell[8427, 266, 1117, 35, 72, "Input",ExpressionUUID->"ece1eee1-44e9-41a5-9fc0-e02099a1d15c"],
+Cell[9547, 303, 267, 7, 51, "Input",ExpressionUUID->"7f3efd86-e997-454a-b15c-d11d7e6b7957"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
