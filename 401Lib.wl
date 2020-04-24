@@ -8,7 +8,7 @@
 <<Notation`;
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Notation*)
 
 
@@ -23,10 +23,16 @@ Symbolize[ParsedBoxWrapper[SubscriptBox["_","_"]]]
 (*Assumptions*)
 
 
-$Assumptions={{\[Gamma],\[Beta],r,\[Theta],\[Phi],t,\[Tau],R,\[Omega],k,\[Epsilon],\[Mu],\[Sigma],Subscript[\[Mu], 0],Subscript[\[Epsilon], 0],c}\[Element]PositiveReals,{x,y,z,Subscript[E, 0],Subscript[B, 0]}\[Element]Reals,{m,n,k}\[Element]NonNegativeIntegers};
+$Assumptions={{\[Gamma],\[Beta],r,\[Theta],\[Phi],t,\[Tau],R,\[Omega],k,\[Epsilon],\[Mu],\[Sigma],\!\(\*
+TagBox[
+StyleBox["\\[Mu]\\[UnderBracket]Subscript\\[UnderBracket]0",
+ShowSpecialCharacters->False,
+ShowStringCharacters->True,
+NumberMarks->True],
+FullForm]\),Subscript[\[Epsilon], 0],c}\[Element]PositiveReals,{x,y,z,Subscript[E, 0],Subscript[B, 0]}\[Element]Reals,{m,n,k}\[Element]NonNegativeIntegers};
 
 
-(* ::Section::Closed:: *)
+(* ::Section:: *)
 (*Constants*)
 
 
@@ -65,7 +71,7 @@ ShowSpecialCharacters->False,
 ShowStringCharacters->True,
 NumberMarks->True],
 FullForm]\)
-QuantityReplace[quants_,OptionsPattern[{Fun->True}]][expr_]:=expr/. Table[If[QuantityQ[q[[2]]],q[[1]]->q[[2]],q[[1]]->Quantity[q[[2]]]],{q,quants}]/. If[OptionValue[Fun],fundamentalConstants,{}]
+QuantityReplace[quants_:{},OptionsPattern[{Fun->True}]][expr_]:=expr/. Table[Which[QuantityQ[qq[[2]]],qq[[1]]->qq[[2]],StringQ[qq[[2]]],qq[[1]]->Quantity[qq[[2]]],True,qq],{qq,quants}]/. If[OptionValue[Fun],fundamentalConstants,{}]
 PoyntingVector[ef_,bf_]:=FullSimplify[Re[ComplexExpand[ef]]]\[Cross]FullSimplify[Re[ComplexExpand[bf]]]/Subscript[\[Mu], 0]
 
 
